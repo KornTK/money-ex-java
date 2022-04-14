@@ -27,7 +27,6 @@ public class register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         name_IN = new javax.swing.JTextField();
@@ -41,10 +40,9 @@ public class register extends javax.swing.JFrame {
         regitt = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        text_ale = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project6330611030/logo2.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
@@ -80,6 +78,11 @@ public class register extends javax.swing.JFrame {
 
         regitt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         regitt.setText("สมัครสมาชิก");
+        regitt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regittActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("กลับหน้าเข้าสู่ระบบ");
@@ -98,18 +101,13 @@ public class register extends javax.swing.JFrame {
             }
         });
 
+        text_ale.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        text_ale.setForeground(new java.awt.Color(255, 102, 102));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(38, 38, 38)
-                .addComponent(jButton3)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jLabel3)
@@ -117,6 +115,11 @@ public class register extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(38, 38, 38)
+                        .addComponent(jButton3)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +138,8 @@ public class register extends javax.swing.JFrame {
                             .addComponent(Pass_vass, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Pass_IN, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(User_IN, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(name_IN, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(name_IN, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(text_ale))
                         .addGap(113, 113, 113))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton2)
@@ -149,14 +153,14 @@ public class register extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)))
+                        .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(text_ale))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name_IN, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,6 +201,36 @@ public class register extends javax.swing.JFrame {
         login backlogin = new login();
         backlogin.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void regittActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regittActionPerformed
+        // TODO add your handling code here:
+        
+        //register boutttm
+        String input_name = name_IN.getText(); 
+        String input_User = User_IN.getText(); 
+        String input_Pass = Pass_IN.getText(); 
+        
+        String input_Pass_vass = Pass_vass.getText();
+        //System.out.print(input_name);
+      
+        if(input_name.length() == 0  && input_User.length() == 0  && input_Pass.length() == 0 && input_Pass_vass.length() == 0 ){
+            text_ale.setText(String.format("Pls fill all data!"));
+        }else{
+            if(input_Pass.equals(input_Pass_vass)){
+                System.out.print("OK"); 
+                
+                String user_mix = input_User+" "+input_Pass;
+                
+                 setting path_file = new setting();
+                 String filePath = path_file.getPath();
+                
+            }else{
+                text_ale.setText(String.format("Password not math!"));
+            }
+           
+        }
+        
+    }//GEN-LAST:event_regittActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,7 +273,6 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JTextField User_IN;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -248,5 +281,6 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField name_IN;
     private javax.swing.JButton regitt;
+    private javax.swing.JLabel text_ale;
     // End of variables declaration//GEN-END:variables
 }

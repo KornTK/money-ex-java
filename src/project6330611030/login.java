@@ -190,8 +190,9 @@ public class login extends javax.swing.JFrame {
         System.out.print(mix_user);
         
         
+        setting path_file = new setting();
+        String filePath = path_file.getPath();
         
-        String filePath = "D:/Progarmming/NonP1/Project6330611030/Project6330611030/money-ex-java/src/User.txt";
         String username =mix_user;
         BufferedReader bufferedReader;
         try {
