@@ -5,6 +5,16 @@
  */
 package project6330611030;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import static java.nio.file.Files.list;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  *
  * @author pokde
@@ -223,7 +233,24 @@ public class register extends javax.swing.JFrame {
                 
                  setting path_file = new setting();
                  String filePath = path_file.getPath();
+                try{
+                    	   List<String> user_old = Files.readAllLines(new File(filePath).toPath(), Charset.defaultCharset());
+                        //System.out.print(result);
+                  BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+                  for(int i=0;i<user_old.size();i++){
+                        System.out.println(user_old.get(i));
+                        writer.write(user_old.get(i));
+                        writer.newLine();
+}
+                    writer.write(user_mix);
                 
+                    writer.newLine();
+                    writer.flush();
+                    writer.close();
+                    
+                }catch (IOException ex){
+                    System.out.println("File not found! pls check path setting.java");
+                }
             }else{
                 text_ale.setText(String.format("Password not math!"));
             }

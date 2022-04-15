@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -206,10 +207,14 @@ public class login extends javax.swing.JFrame {
                 }
             }
             if (usernamenotExists) {
-                System.out.println("Hi."+username);
+                System.out.println("Hi."+input_user);
                 
                 path_file.SetUser(input_user);
                 
+        JOptionPane.showMessageDialog(null, 
+                              "ยินดีต้อนรับ "+input_user +" ครับ", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
 
                 
                 infor go_infor = new infor();
