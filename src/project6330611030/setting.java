@@ -10,9 +10,11 @@ package project6330611030;
  * @author pokde
  */
 public class setting {
-     private String path_user;
+    private String path_user;
      
     private int height;
+    public static String user_login;
+
     
     setting() {
     this.path_user = "D:/Progarmming/NonP1/Project6330611030/Project6330611030/money-ex-java/src/User.txt";
@@ -26,5 +28,15 @@ public class setting {
 
   public int getHeight() {
      return this.height;
+  }
+  public String getUser() {
+     System.out.println("open."+user_login);
+     return user_login;
+  }
+    public String SetUser(String x_in) {
+     this.user_login = x_in;
+            System.out.println("Save."+user_login);
+
+     return user_login;
   }
 }

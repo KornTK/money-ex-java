@@ -207,6 +207,9 @@ public class login extends javax.swing.JFrame {
             }
             if (usernamenotExists) {
                 System.out.println("Hi."+username);
+                
+                path_file.SetUser(input_user);
+                
                 infor go_infor = new infor();
                 go_infor.setVisible(true);
             } else {

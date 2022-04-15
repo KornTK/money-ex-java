@@ -12,12 +12,16 @@ import javax.swing.JOptionPane;
  * @author pokde
  */
 public class infor extends javax.swing.JFrame {
+                public String login_user;
 
     /**
      * Creates new form infor
      */
     public infor() {
         initComponents();
+        setting path_file = new setting();
+         System.out.println("infor "+setting.user_login);
+
     }
 
     /**
@@ -254,6 +258,7 @@ public class infor extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new infor().setVisible(true);
+
             }
         });
     }
