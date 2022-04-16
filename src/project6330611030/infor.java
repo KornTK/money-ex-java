@@ -94,7 +94,7 @@ public class infor extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         THB_have = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        go_ex = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         USD_have = new javax.swing.JLabel();
@@ -141,8 +141,13 @@ public class infor extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("แลกเปลี่ยนเงิน");
+        go_ex.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        go_ex.setText("แลกเปลี่ยนเงิน");
+        go_ex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go_exActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("ยอดเงินคงเหลือ(USD)");
@@ -205,7 +210,7 @@ public class infor extends javax.swing.JFrame {
                                 .addGap(90, 90, 90)
                                 .addComponent(jButton4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(go_ex, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,7 +258,7 @@ public class infor extends javax.swing.JFrame {
                         .addGap(94, 94, 94)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(go_ex, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
         );
@@ -278,6 +283,10 @@ public class infor extends javax.swing.JFrame {
         logtran golog = new logtran();
         golog.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void go_exActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go_exActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_go_exActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,7 +328,7 @@ public class infor extends javax.swing.JFrame {
     private javax.swing.JLabel THB_have;
     private javax.swing.JLabel USD_have;
     private javax.swing.JLabel YEN_have;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton go_ex;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

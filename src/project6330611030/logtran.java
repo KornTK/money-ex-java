@@ -5,6 +5,18 @@
  */
 package project6330611030;
 
+import java.awt.Point;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.util.List;
+import java.util.Scanner;
+import static project6330611030.setting.path_Log;
+
 /**
  *
  * @author pokde
@@ -16,6 +28,25 @@ public class logtran extends javax.swing.JFrame {
      */
     public logtran() {
         initComponents();
+                 setting obj_call_path = new setting();
+                    System.out.print(obj_call_path.getPath_Log());
+                        try {
+      File myObj = new File(obj_call_path.getPath_Log());
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+
+        System.out.println(data);
+         textArea.setSelectionStart(0);
+        textArea.setSelectionEnd(0); 
+        textArea.append(data+"\n");
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+                    
     }
 
     /**
@@ -32,6 +63,8 @@ public class logtran extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        Log_txt = new javax.swing.JScrollPane();
+        textArea = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -55,15 +88,21 @@ public class logtran extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setText("ประวัติการแลกเปลี่ยน");
 
+        Log_txt.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        Log_txt.setViewportView(textArea);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
+            .addComponent(Log_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 176, Short.MAX_VALUE)
+            .addComponent(Log_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
         );
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -120,7 +159,7 @@ public class logtran extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -177,6 +216,7 @@ public class logtran extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane Log_txt;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -184,5 +224,6 @@ public class logtran extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,6 +13,8 @@ public class setting {
     private String path_user;
     private int height;
     public static String user_login;
+    public static String path_Log;
+
     
     public static String path_have;
     public static String path_have_THB;
@@ -20,19 +22,35 @@ public class setting {
       public static String path_have_YEN;
 
     public static String path_RATE;
-    public static String path_RATE_USD;
-    public static String path_RATE_YEN;
+    public static String path_RATE_THB_USD;
+    public static String path_RATE_THB_YEN;
+    public static String path_RATE_USD_THB;
+    public static String path_RATE_USD_YEN;
+    public static String path_RATE_YEN_THB;
+    public static String path_RATE_YEN_USD;
 
     
     setting() {
     this.path_user = "D:/Progarmming/NonP1/Project6330611030/Project6330611030/money-ex-java/src/User.txt";
+    
+    path_Log = "D:/Progarmming/NonP1/Project6330611030/Project6330611030/money-ex-java/src/Log.txt";
+
     path_have = "D:/Progarmming/NonP1/Project6330611030/Project6330611030/money-ex-java/src/money_have/";
     path_have_THB = path_have+"THB.txt";
     path_have_USD = path_have+"USD.txt";
     path_have_YEN = path_have+"YEN.txt";
+    
     path_RATE = "D:/Progarmming/NonP1/Project6330611030/Project6330611030/money-ex-java/src/RATE_EX";
-    path_RATE_USD = path_RATE+"USD.txt";
-    path_RATE_YEN = path_RATE+"YEN.txt";
+    
+    path_RATE_THB_USD = path_RATE+"THB-USD.txt";
+    path_RATE_THB_YEN = path_RATE+"THB-YEN.txt";
+    
+    path_RATE_USD_THB = path_RATE+"USD-THB.txt";
+    path_RATE_USD_YEN = path_RATE+"USD-YEB.txt";
+    
+    path_RATE_YEN_THB = path_RATE+"YEN-THB.txt";
+    path_RATE_YEN_USD = path_RATE+"YEN-USD.txt";
+
     this.height = 400;
  }
 
@@ -53,4 +71,8 @@ public class setting {
 
      return user_login;
   }
+      public String getPath_Log() {
+     return this.path_Log;
+  }
+
 }
