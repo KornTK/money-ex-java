@@ -44,7 +44,7 @@ public class setting {
      return this.height;
   }
   public String getUser() {
-     System.out.println("open."+user_login);
+     System.out.println("Read."+user_login);
      return user_login;
   }
     public String SetUser(String x_in) {
