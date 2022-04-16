@@ -28,7 +28,7 @@ public class logtran extends javax.swing.JFrame {
      */
     public logtran() {
         initComponents();
-                 setting obj_call_path = new setting();
+                 Call_quee obj_call_path = new Call_quee();
                     System.out.print(obj_call_path.getPath_Log());
                         try {
       File myObj = new File(obj_call_path.getPath_Log());
@@ -171,7 +171,10 @@ public class logtran extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        
+        warn person2 = new exit_boy(setting.user_login,001); //Polymorphism 
+
+        person2.exit_warn();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

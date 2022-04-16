@@ -200,7 +200,8 @@ public class register extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+                   warn ex2 = new exit_boy_no_user(); //Polymorphism 
+        ex2.exit_warn();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void name_INActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_INActionPerformed

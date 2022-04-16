@@ -10,6 +10,7 @@ package project6330611030;
  * @author pokde
  */
 public class setting {
+
     private String path_user;
     private int height;
     public static String user_login;
@@ -55,24 +56,32 @@ public class setting {
  }
 
   public String getPath() {
+      
      return this.path_user;
   }
+    public String getUser() {
+      
+     return this.user_login;
+  }
 
-  public int getHeight() {
-     return this.height;
-  }
-  public String getUser() {
-     System.out.println("Read."+user_login);
-     return user_login;
-  }
+
+
     public String SetUser(String x_in) {
      this.user_login = x_in;
-            System.out.println("Save."+user_login);
+     call_get show_in_consol = new call_get(this.user_login);
 
      return user_login;
   }
-      public String getPath_Log() {
-     return this.path_Log;
-  }
+
 
 }
+class call_get extends setting {           //Inheritance 
+    public call_get (){
+        
+    }
+    public call_get (String name){
+        System.out.println(user_login+" is login");
+
+    }
+}
+

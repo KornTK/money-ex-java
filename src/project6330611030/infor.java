@@ -268,14 +268,16 @@ public class infor extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        warn person2 = new exit_boy(setting.user_login,001); //Polymorphism 
+
+        person2.exit_warn();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         JOptionPane.showMessageDialog(null, "ออกจากระบบเรียบร้อยแล้ว.", "Dee-Money", 1);
-         login backmain = new login();
-         backmain.setVisible(true);
+        Call_quee logout = new Call_quee();
+        logout.User_logout();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -286,6 +288,8 @@ public class infor extends javax.swing.JFrame {
 
     private void go_exActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go_exActionPerformed
         // TODO add your handling code here:
+                moneyex goex = new moneyex();
+        goex.setVisible(true);
     }//GEN-LAST:event_go_exActionPerformed
 
     /**

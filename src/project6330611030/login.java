@@ -171,7 +171,9 @@ public class login extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        warn person2 = new exit_boy_no_user(); //Polymorphism 
+
+        person2.exit_warn();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -188,7 +190,7 @@ public class login extends javax.swing.JFrame {
         
         String mix_user = input_user+" "+input_pass;
 
-        System.out.print(mix_user);
+        //System.out.print(mix_user);
         
         
         setting path_file = new setting();
