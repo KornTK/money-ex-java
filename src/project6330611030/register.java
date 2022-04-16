@@ -14,6 +14,7 @@ import java.nio.file.Files;
 import static java.nio.file.Files.list;
 import java.util.Arrays;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -247,7 +248,12 @@ public class register extends javax.swing.JFrame {
                     writer.newLine();
                     writer.flush();
                     writer.close();
-                    
+                            JOptionPane.showMessageDialog(null, 
+                              "สมัครสมาชิกเรียวร้อย ยินดีต้อนรับ "+input_User +" ครับ", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+                    login backlogin = new login();
+                    backlogin.setVisible(true);
                 }catch (IOException ex){
                     System.out.println("File not found! pls check path setting.java");
                 }

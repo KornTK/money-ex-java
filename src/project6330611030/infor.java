@@ -5,6 +5,9 @@
  */
 package project6330611030;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,8 +22,57 @@ public class infor extends javax.swing.JFrame {
      */
     public infor() {
         initComponents();
-                        nameshow.setText(String.format(setting.user_login));
+         nameshow.setText(String.format(setting.user_login));
          System.out.println("infor "+setting.user_login);
+         
+         //read thb 
+         try {
+      File myObj = new File(setting.path_have_THB);
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+        System.out.println("THB : "+data);
+        THB_have.setText(String.format(data));
+
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+         
+        //read USD
+         try {
+      File myObj2 = new File(setting.path_have_USD);
+      Scanner myReader2 = new Scanner(myObj2);
+      while (myReader2.hasNextLine()) {
+        String data2 = myReader2.nextLine();
+        System.out.println("USD : "+data2);
+        USD_have.setText(String.format(data2));
+
+      }
+      myReader2.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+         
+       //read USD
+         try {
+      File myObj3 = new File(setting.path_have_YEN);
+      Scanner myReader3 = new Scanner(myObj3);
+      while (myReader3.hasNextLine()) {
+        String data3 = myReader3.nextLine();
+        System.out.println("YEN : "+data3);
+        YEN_have.setText(String.format(data3));
+
+      }
+      myReader3.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+         
 
     }
 
@@ -40,14 +92,14 @@ public class infor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         nameshow = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        THB_have = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        USD_have = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        YEN_have = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,13 +125,13 @@ public class infor extends javax.swing.JFrame {
         jLabel3.setText("ยินดีต้อนรับคุณ");
 
         nameshow.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        nameshow.setText("jLabel5");
+        nameshow.setText("ืname");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("ยอดเงินคงเหลือ(บาท)");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("jLabel7");
+        THB_have.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        THB_have.setText("jLabel7");
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("ออกจากระบบ");
@@ -95,14 +147,14 @@ public class infor extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("ยอดเงินคงเหลือ(USD)");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("jLabel7");
+        USD_have.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        USD_have.setText("jLabel7");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("ยอดเงินคงเหลือ(Yen)");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("jLabel7");
+        YEN_have.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        YEN_have.setText("jLabel7");
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setText("ดูประวัติการแลกเปลี่ยนเงิน");
@@ -135,15 +187,15 @@ public class infor extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel11)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jLabel12))
+                                        .addComponent(YEN_have))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jLabel10))
+                                        .addComponent(USD_have))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jLabel7)))))
+                                        .addComponent(THB_have)))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(64, 64, 64)
@@ -187,17 +239,17 @@ public class infor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel7))
+                            .addComponent(THB_have))
                         .addGap(4, 4, 4)
                         .addComponent(jLabel8)
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jLabel10))
+                            .addComponent(USD_have))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(jLabel12))
+                            .addComponent(YEN_have))
                         .addGap(94, 94, 94)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,19 +316,19 @@ public class infor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel THB_have;
+    private javax.swing.JLabel USD_have;
+    private javax.swing.JLabel YEN_have;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel nameshow;
