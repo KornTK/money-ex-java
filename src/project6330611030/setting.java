@@ -41,13 +41,13 @@ public class setting {
     path_have_USD = path_have+"USD.txt";
     path_have_YEN = path_have+"YEN.txt";
     
-    path_RATE = "D:/Progarmming/NonP1/Project6330611030/Project6330611030/money-ex-java/src/RATE_EX";
+    path_RATE = "D:/Progarmming/NonP1/Project6330611030/Project6330611030/money-ex-java/src/RATE_EX/";
     
     path_RATE_THB_USD = path_RATE+"THB-USD.txt";
     path_RATE_THB_YEN = path_RATE+"THB-YEN.txt";
     
     path_RATE_USD_THB = path_RATE+"USD-THB.txt";
-    path_RATE_USD_YEN = path_RATE+"USD-YEB.txt";
+    path_RATE_USD_YEN = path_RATE+"USD-YEN.txt";
     
     path_RATE_YEN_THB = path_RATE+"YEN-THB.txt";
     path_RATE_YEN_USD = path_RATE+"YEN-USD.txt";
