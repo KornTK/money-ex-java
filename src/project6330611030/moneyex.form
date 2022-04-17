@@ -33,14 +33,14 @@
                               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextField2" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="input_thb_yen" min="-2" pref="102" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                              <Component id="go_thb_yen" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextField1" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="input_thb_usd" min="-2" pref="102" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                              <Component id="go_thb_usd" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -87,9 +87,9 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jTextField5" min="-2" pref="110" max="-2" attributes="0"/>
+                                          <Component id="input_usd_thb" min="-2" pref="110" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                          <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                                          <Component id="go_usd_thb" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
@@ -106,13 +106,13 @@
                                                       <Group type="102" attributes="0">
                                                           <Group type="103" groupAlignment="0" attributes="0">
                                                               <Group type="102" attributes="0">
-                                                                  <Component id="jTextField6" min="-2" pref="110" max="-2" attributes="0"/>
+                                                                  <Component id="input_usd_yen" min="-2" pref="110" max="-2" attributes="0"/>
                                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                                  <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="go_usd_yen" min="-2" max="-2" attributes="0"/>
                                                               </Group>
                                                               <Group type="102" alignment="0" attributes="0">
                                                                   <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                                                                  <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="go_yen_usd" min="-2" max="-2" attributes="0"/>
                                                               </Group>
                                                           </Group>
                                                           <EmptySpace max="32767" attributes="0"/>
@@ -136,7 +136,7 @@
                                           <Component id="show_rate_yen_usd" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jTextField4" min="-2" pref="102" max="-2" attributes="0"/>
+                                          <Component id="input_yen_usd" min="-2" pref="102" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -147,7 +147,7 @@
                                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jTextField3" min="-2" pref="102" max="-2" attributes="0"/>
+                                                  <Component id="input_yen_thb" min="-2" pref="102" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -155,7 +155,7 @@
                                               <Component id="show_rate_yen_thb" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="go_yen_thb" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -205,8 +205,8 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField1" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="input_thb_usd" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="go_thb_usd" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -222,8 +222,8 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField2" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="input_thb_yen" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Component id="go_thb_yen" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           </Group>
@@ -236,8 +236,8 @@
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="go_yen_thb" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="input_yen_thb" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -251,8 +251,8 @@
                                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField4" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                                      <Component id="jButton10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="input_yen_usd" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="go_yen_usd" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -267,8 +267,8 @@
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField5" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="jButton12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="input_usd_thb" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="go_usd_thb" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -279,8 +279,8 @@
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField6" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="go_usd_yen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="input_usd_yen" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="107" max="32767" attributes="0"/>
                   </Group>
@@ -388,15 +388,21 @@
         <Property name="text" type="java.lang.String" value="&#xe1a;&#xe32;&#xe17; &#xe44;&#xe1b; USD"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="input_thb_usd">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="BATH TO USD"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_thb_usdKeyPressed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="go_thb_usd">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go_thb_usdActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -413,12 +419,15 @@
         <Property name="text" type="java.lang.String" value="wait for data from file"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="input_thb_yen">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="BATH TO YEN"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_thb_yenKeyPressed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="go_thb_yen">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
@@ -441,12 +450,15 @@
         <Property name="text" type="java.lang.String" value="wait for data from file"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="input_yen_thb">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="YEN TO THB"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_yen_thbKeyPressed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton8">
+    <Component class="javax.swing.JButton" name="go_yen_thb">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
@@ -469,12 +481,15 @@
         <Property name="text" type="java.lang.String" value="wait for data from file"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="input_yen_usd">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="YEN TO USD"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_yen_usdKeyPressed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton10">
+    <Component class="javax.swing.JButton" name="go_yen_usd">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
@@ -505,12 +520,15 @@
         <Property name="text" type="java.lang.String" value="wait for data from file"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="input_usd_thb">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="USD TO THB"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_usd_thbKeyPressed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton12">
+    <Component class="javax.swing.JButton" name="go_usd_thb">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
@@ -533,12 +551,15 @@
         <Property name="text" type="java.lang.String" value="wait for data from file"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="input_usd_yen">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="USD TO YEN"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_usd_yenKeyPressed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton14">
+    <Component class="javax.swing.JButton" name="go_usd_yen">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>

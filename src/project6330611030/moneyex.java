@@ -5,21 +5,26 @@
  */
 package project6330611030;
 
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author pokde
  */
 public class moneyex extends javax.swing.JFrame {
-
+        int THB_have_data;
+        int USD_have_data;
+        int YEN_have_data;
     /**
      * Creates new form moneyex
      */
     public moneyex() {
         initComponents();
+
         
          //read thb have
          try {
@@ -28,6 +33,7 @@ public class moneyex extends javax.swing.JFrame {
       while (myReader.hasNextLine()) {
         String data = myReader.nextLine();
         System.out.println("THB : "+data);
+        THB_have_data = Integer.valueOf(data);
         THB_have.setText(String.format("THB : "+data));
 
       }
@@ -44,6 +50,7 @@ public class moneyex extends javax.swing.JFrame {
       while (myReader2.hasNextLine()) {
         String data2 = myReader2.nextLine();
         System.out.println("USD : "+data2);
+        USD_have_data = Integer.valueOf(data2);
         USD_have.setText(String.format("USD : "+data2));
 
       }
@@ -53,13 +60,14 @@ public class moneyex extends javax.swing.JFrame {
       e.printStackTrace();
     }
          
-       //read USD have
+       //read Yen have
          try {
       File myObj3 = new File(setting.path_have_YEN);
       Scanner myReader3 = new Scanner(myObj3);
       while (myReader3.hasNextLine()) {
         String data3 = myReader3.nextLine();
         System.out.println("YEN : "+data3);
+        YEN_have_data = Integer.valueOf(data3);
         YEN_have.setText(String.format("YEN : "+data3));
 
       }
@@ -176,34 +184,34 @@ public class moneyex extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        input_thb_usd = new javax.swing.JTextField();
+        go_thb_usd = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         show_rate_bath_usd = new javax.swing.JLabel();
         show_rate_bath_yen = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        input_thb_yen = new javax.swing.JTextField();
+        go_thb_yen = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         show_rate_yen_thb = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
+        input_yen_thb = new javax.swing.JTextField();
+        go_yen_thb = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         show_rate_yen_usd = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
+        input_yen_usd = new javax.swing.JTextField();
+        go_yen_usd = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         show_rate_usd_thb = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton12 = new javax.swing.JButton();
+        input_usd_thb = new javax.swing.JTextField();
+        go_usd_thb = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         show_rate_usd_yen = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jButton14 = new javax.swing.JButton();
+        input_usd_yen = new javax.swing.JTextField();
+        go_usd_yen = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
@@ -263,9 +271,19 @@ public class moneyex extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("บาท ไป USD");
 
-        jTextField1.setToolTipText("BATH TO USD");
+        input_thb_usd.setToolTipText("BATH TO USD");
+        input_thb_usd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                input_thb_usdKeyPressed(evt);
+            }
+        });
 
-        jButton4.setText("คํานวน");
+        go_thb_usd.setText("คํานวน");
+        go_thb_usd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go_thb_usdActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("คุณจะได้รับ  xx USD");
 
@@ -273,9 +291,14 @@ public class moneyex extends javax.swing.JFrame {
 
         show_rate_bath_yen.setText("wait for data from file");
 
-        jTextField2.setToolTipText("BATH TO YEN");
+        input_thb_yen.setToolTipText("BATH TO YEN");
+        input_thb_yen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                input_thb_yenKeyPressed(evt);
+            }
+        });
 
-        jButton6.setText("คํานวน");
+        go_thb_yen.setText("คํานวน");
 
         jLabel10.setText("คุณจะได้รับ  xx YEN");
 
@@ -284,9 +307,14 @@ public class moneyex extends javax.swing.JFrame {
 
         show_rate_yen_thb.setText("wait for data from file");
 
-        jTextField3.setToolTipText("YEN TO THB");
+        input_yen_thb.setToolTipText("YEN TO THB");
+        input_yen_thb.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                input_yen_thbKeyPressed(evt);
+            }
+        });
 
-        jButton8.setText("คํานวน");
+        go_yen_thb.setText("คํานวน");
 
         jLabel13.setText("คุณจะได้รับ  xx บาท");
 
@@ -295,9 +323,14 @@ public class moneyex extends javax.swing.JFrame {
 
         show_rate_yen_usd.setText("wait for data from file");
 
-        jTextField4.setToolTipText("YEN TO USD");
+        input_yen_usd.setToolTipText("YEN TO USD");
+        input_yen_usd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                input_yen_usdKeyPressed(evt);
+            }
+        });
 
-        jButton10.setText("คํานวน");
+        go_yen_usd.setText("คํานวน");
 
         jLabel16.setText("คุณจะได้รับ  xx USD");
 
@@ -309,9 +342,14 @@ public class moneyex extends javax.swing.JFrame {
 
         show_rate_usd_thb.setText("wait for data from file");
 
-        jTextField5.setToolTipText("USD TO THB");
+        input_usd_thb.setToolTipText("USD TO THB");
+        input_usd_thb.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                input_usd_thbKeyPressed(evt);
+            }
+        });
 
-        jButton12.setText("คํานวน");
+        go_usd_thb.setText("คํานวน");
 
         jLabel20.setText("คุณจะได้รับ  xx THB");
 
@@ -320,9 +358,14 @@ public class moneyex extends javax.swing.JFrame {
 
         show_rate_usd_yen.setText("wait for data from file");
 
-        jTextField6.setToolTipText("USD TO YEN");
+        input_usd_yen.setToolTipText("USD TO YEN");
+        input_usd_yen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                input_usd_yenKeyPressed(evt);
+            }
+        });
 
-        jButton14.setText("คํานวน");
+        go_usd_yen.setText("คํานวน");
 
         jLabel23.setText("คุณจะได้รับ  xx YEN");
 
@@ -424,13 +467,13 @@ public class moneyex extends javax.swing.JFrame {
                                 .addGap(31, 31, 31)
                                 .addComponent(jButton2))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(input_thb_yen, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28)
-                                .addComponent(jButton6))
+                                .addComponent(go_thb_yen))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(input_thb_usd, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
-                                .addComponent(jButton4))
+                                .addComponent(go_thb_usd))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
@@ -464,9 +507,9 @@ public class moneyex extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(input_usd_thb, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(21, 21, 21)
-                                            .addComponent(jButton12))
+                                            .addComponent(go_usd_thb))
                                         .addGroup(layout.createSequentialGroup()
                                             .addGap(1, 1, 1)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -481,12 +524,12 @@ public class moneyex extends javax.swing.JFrame {
                                                         .addGroup(layout.createSequentialGroup()
                                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                 .addGroup(layout.createSequentialGroup()
-                                                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                    .addComponent(input_usd_yen, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addGap(18, 18, 18)
-                                                                    .addComponent(jButton14))
+                                                                    .addComponent(go_usd_yen))
                                                                 .addGroup(layout.createSequentialGroup()
                                                                     .addGap(131, 131, 131)
-                                                                    .addComponent(jButton10)))
+                                                                    .addComponent(go_yen_usd)))
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                 .addComponent(jLabel20)
@@ -501,7 +544,7 @@ public class moneyex extends javax.swing.JFrame {
                                             .addGap(26, 26, 26)
                                             .addComponent(show_rate_yen_usd))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(input_yen_usd, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(180, 180, 180)
                                             .addComponent(jLabel4))
                                         .addGroup(layout.createSequentialGroup()
@@ -510,13 +553,13 @@ public class moneyex extends javax.swing.JFrame {
                                                     .addComponent(jLabel11)
                                                     .addGap(30, 30, 30))
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(input_yen_thb, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(show_rate_yen_thb)
                                                 .addGroup(layout.createSequentialGroup()
                                                     .addGap(18, 18, 18)
-                                                    .addComponent(jButton8)))))
+                                                    .addComponent(go_yen_thb)))))
                                     .addGap(0, 0, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(46, 46, 46)
@@ -549,8 +592,8 @@ public class moneyex extends javax.swing.JFrame {
                             .addComponent(show_rate_bath_usd))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4)
+                            .addComponent(input_thb_usd, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(go_thb_usd)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -563,8 +606,8 @@ public class moneyex extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton6))
+                                    .addComponent(input_thb_yen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(go_thb_yen))
                                 .addGap(1, 1, 1)))
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -573,8 +616,8 @@ public class moneyex extends javax.swing.JFrame {
                             .addComponent(show_rate_yen_thb))
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton8)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(go_yen_thb)
+                            .addComponent(input_yen_thb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13))
                         .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -586,8 +629,8 @@ public class moneyex extends javax.swing.JFrame {
                                         .addGap(5, 5, 5)
                                         .addComponent(jLabel16))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton10)))
+                                        .addComponent(input_yen_usd, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(go_yen_usd)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addGap(1, 1, 1)
@@ -597,8 +640,8 @@ public class moneyex extends javax.swing.JFrame {
                             .addComponent(show_rate_yen_usd))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton12)
+                            .addComponent(input_usd_thb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(go_usd_thb)
                             .addComponent(jLabel20))
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -607,8 +650,8 @@ public class moneyex extends javax.swing.JFrame {
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel23)
-                            .addComponent(jButton14)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(go_usd_yen)
+                            .addComponent(input_usd_yen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 107, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -643,6 +686,185 @@ public class moneyex extends javax.swing.JFrame {
                 logtran golog = new logtran();
         golog.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void go_thb_usdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go_thb_usdActionPerformed
+        // TODO add your handling code here:
+         int input_thb_usd_data = Integer.valueOf(input_thb_usd.getText()); 
+         if (input_thb_usd_data <= THB_have_data){
+             
+         }else{
+             System.out.print("U don't have enove money!");
+                     JOptionPane.showMessageDialog(null, 
+                              "คุณมีเงินไม่เพียงพอครับ ยอดต้องไม่เกิน : "+THB_have_data+" บาท", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+         }
+
+    }//GEN-LAST:event_go_thb_usdActionPerformed
+
+    private void input_thb_usdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_thb_usdKeyPressed
+        // TODO add your handling code here:
+        //check input is number and not over 9 dig
+        String inputD_thb_usd = input_thb_usd.getText();
+        //get length
+        int length1 = inputD_thb_usd.length();
+        
+        char c1 = evt.getKeyChar();
+        
+        //check num 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            //check length not over 9
+            if(length1<9){
+                input_thb_usd.setEditable(true);
+            }else{
+                input_thb_usd.setEditable(false);
+            }
+        }else{
+            // allow for key 'back space' and 'delete' for edit
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()==KeyEvent.VK_DELETE){
+                // allow edit
+                input_thb_usd.setEditable(true);
+            }else{
+                input_thb_usd.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_input_thb_usdKeyPressed
+
+    private void input_thb_yenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_thb_yenKeyPressed
+        // TODO add your handling code here:
+        String inputD_thb_yen = input_thb_yen.getText();
+        //get length
+        int length2 = inputD_thb_yen.length();
+        
+        char c2 = evt.getKeyChar();
+        
+        //check num 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            //check length not over 9
+            if(length2<9){
+                input_thb_yen.setEditable(true);
+            }else{
+                input_thb_yen.setEditable(false);
+            }
+        }else{
+            // allow for key 'back space' and 'delete' for edit
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()==KeyEvent.VK_DELETE){
+                // allow edit
+                input_thb_yen.setEditable(true);
+            }else{
+                input_thb_yen.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_input_thb_yenKeyPressed
+
+    private void input_yen_thbKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_yen_thbKeyPressed
+        // TODO add your handling code here:
+        String inputD_yen_thb = input_yen_thb.getText();
+        //get length
+        int length3 = inputD_yen_thb.length();
+        
+        char c3 = evt.getKeyChar();
+        
+        //check num 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            //check length not over 9
+            if(length3<9){
+                input_yen_thb.setEditable(true);
+            }else{
+                input_yen_thb.setEditable(false);
+            }
+        }else{
+            // allow for key 'back space' and 'delete' for edit
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()==KeyEvent.VK_DELETE){
+                // allow edit
+                input_yen_thb.setEditable(true);
+            }else{
+                input_yen_thb.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_input_yen_thbKeyPressed
+
+    private void input_yen_usdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_yen_usdKeyPressed
+        // TODO add your handling code here:
+        String inputD_yen_usd = input_yen_usd.getText();
+        //get length
+        int length4 = inputD_yen_usd.length();
+        
+        char c4 = evt.getKeyChar();
+        
+        //check num 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            //check length not over 9
+            if(length4<9){
+                input_yen_usd.setEditable(true);
+            }else{
+                input_yen_usd.setEditable(false);
+            }
+        }else{
+            // allow for key 'back space' and 'delete' for edit
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()==KeyEvent.VK_DELETE){
+                // allow edit
+                input_yen_usd.setEditable(true);
+            }else{
+                input_yen_usd.setEditable(false);
+            }
+        }
+        
+    }//GEN-LAST:event_input_yen_usdKeyPressed
+
+    private void input_usd_thbKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_usd_thbKeyPressed
+        // TODO add your handling code here:
+                String inputD_usd_thb = input_usd_thb.getText();
+        //get length
+        int length5 = inputD_usd_thb.length();
+        
+        char c5 = evt.getKeyChar();
+        
+        //check num 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            //check length not over 9
+            if(length5<9){
+                input_usd_thb.setEditable(true);
+            }else{
+                input_usd_thb.setEditable(false);
+            }
+        }else{
+            // allow for key 'back space' and 'delete' for edit
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()==KeyEvent.VK_DELETE){
+                // allow edit
+                input_usd_thb.setEditable(true);
+            }else{
+                input_usd_thb.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_input_usd_thbKeyPressed
+
+    private void input_usd_yenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_usd_yenKeyPressed
+        // TODO add your handling code here:
+        String inputD_usd_yen = input_usd_yen.getText();
+        //get length
+        int length6 = inputD_usd_yen.length();
+        
+        char c6 = evt.getKeyChar();
+        
+        //check num 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            //check length not over 9
+            if(length6<9){
+                input_usd_yen.setEditable(true);
+            }else{
+                input_usd_yen.setEditable(false);
+            }
+        }else{
+            // allow for key 'back space' and 'delete' for edit
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()==KeyEvent.VK_DELETE){
+                // allow edit
+                input_usd_yen.setEditable(true);
+            }else{
+                input_usd_yen.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_input_usd_yenKeyPressed
 
     /**
      * @param args the command line arguments
@@ -683,20 +905,26 @@ public class moneyex extends javax.swing.JFrame {
     private javax.swing.JLabel THB_have;
     private javax.swing.JLabel USD_have;
     private javax.swing.JLabel YEN_have;
+    private javax.swing.JButton go_thb_usd;
+    private javax.swing.JButton go_thb_yen;
+    private javax.swing.JButton go_usd_thb;
+    private javax.swing.JButton go_usd_yen;
+    private javax.swing.JButton go_yen_thb;
+    private javax.swing.JButton go_yen_usd;
+    private javax.swing.JTextField input_thb_usd;
+    private javax.swing.JTextField input_thb_yen;
+    private javax.swing.JTextField input_usd_thb;
+    private javax.swing.JTextField input_usd_yen;
+    private javax.swing.JTextField input_yen_thb;
+    private javax.swing.JTextField input_yen_usd;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -718,12 +946,6 @@ public class moneyex extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel show_rate_bath_usd;
     private javax.swing.JLabel show_rate_bath_yen;
     private javax.swing.JLabel show_rate_usd_thb;
