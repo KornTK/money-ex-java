@@ -6,8 +6,17 @@
 package project6330611030;
 
 import java.awt.event.KeyEvent;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.security.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -16,9 +25,9 @@ import javax.swing.JOptionPane;
  * @author pokde
  */
 public class moneyex extends javax.swing.JFrame {
-        int THB_have_data;
-        int USD_have_data;
-        int YEN_have_data;
+        double THB_have_data;
+        double USD_have_data;
+        double YEN_have_data;
         
       double RATE_THB_USD;
     double RATE_THB_YEN;
@@ -40,6 +49,20 @@ public class moneyex extends javax.swing.JFrame {
     double input_usd_yen_data;
     double input_yen_thb_data;
     double input_yen_usd_data;
+    
+    int oprn1 = 0;
+    int oprn2 = 0;
+    int oprn3 = 0;
+    int oprn4 = 0;
+    int oprn5 = 0;
+    int oprn6 = 0;
+    
+    double money_life_temp1;
+    double money_life_temp2;
+    double money_life_temp3;
+    double money_life_temp4;
+    double money_life_temp5;
+    double money_life_temp6;
     /**
      * Creates new form moneyex
      */
@@ -55,7 +78,7 @@ public class moneyex extends javax.swing.JFrame {
       while (myReader.hasNextLine()) {
         String data = myReader.nextLine();
         System.out.println("THB : "+data);
-        THB_have_data = Integer.valueOf(data);
+        THB_have_data = Double.valueOf(data);
         THB_have.setText(String.format("THB : "+data));
 
       }
@@ -72,7 +95,7 @@ public class moneyex extends javax.swing.JFrame {
       while (myReader2.hasNextLine()) {
         String data2 = myReader2.nextLine();
         System.out.println("USD : "+data2);
-        USD_have_data = Integer.valueOf(data2);
+        USD_have_data = Double.valueOf(data2);
         USD_have.setText(String.format("USD : "+data2));
 
       }
@@ -89,7 +112,7 @@ public class moneyex extends javax.swing.JFrame {
       while (myReader3.hasNextLine()) {
         String data3 = myReader3.nextLine();
         System.out.println("YEN : "+data3);
-        YEN_have_data = Integer.valueOf(data3);
+        YEN_have_data = Double.valueOf(data3);
         YEN_have.setText(String.format("YEN : "+data3));
 
       }
@@ -313,7 +336,7 @@ public class moneyex extends javax.swing.JFrame {
             }
         });
 
-        Q1.setText("คุณจะได้รับ  xx USD");
+        Q1.setText("คุณต้องกดคํานวนก่อน");
 
         show_rate_bath_usd.setText("wait for data from file");
 
@@ -333,7 +356,7 @@ public class moneyex extends javax.swing.JFrame {
             }
         });
 
-        Q2.setText("คุณจะได้รับ  xx YEN");
+        Q2.setText("คุณต้องกดคํานวนก่อน");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("YEN ไป บาท");
@@ -354,7 +377,7 @@ public class moneyex extends javax.swing.JFrame {
             }
         });
 
-        Q3.setText("คุณจะได้รับ  xx บาท");
+        Q3.setText("คุณต้องกดคํานวนก่อน");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("YEN ไป USD");
@@ -375,7 +398,7 @@ public class moneyex extends javax.swing.JFrame {
             }
         });
 
-        Q4.setText("คุณจะได้รับ  xx USD");
+        Q4.setText("คุณต้องกดคํานวนก่อน");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel17.setText("แลกจากเงิน Yen");
@@ -399,7 +422,8 @@ public class moneyex extends javax.swing.JFrame {
             }
         });
 
-        Q5.setText("คุณจะได้รับ  xx THB");
+        Q5.setText("คุณต้องกดคํานวนก่อน");
+        Q5.setToolTipText("");
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel21.setText("USD ไป บาท");
@@ -420,7 +444,7 @@ public class moneyex extends javax.swing.JFrame {
             }
         });
 
-        Q6.setText("คุณจะได้รับ  xx YEN");
+        Q6.setText("คุณต้องกดคํานวนก่อน");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
 
@@ -464,16 +488,46 @@ public class moneyex extends javax.swing.JFrame {
         );
 
         go1.setText("ยืนยัน");
+        go1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go1ActionPerformed(evt);
+            }
+        });
 
         go2.setText("ยืนยัน");
+        go2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go2ActionPerformed(evt);
+            }
+        });
 
         go3.setText("ยืนยัน");
+        go3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go3ActionPerformed(evt);
+            }
+        });
 
         go4.setText("ยืนยัน");
+        go4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go4ActionPerformed(evt);
+            }
+        });
 
         go6.setText("ยืนยัน");
+        go6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go6ActionPerformed(evt);
+            }
+        });
 
         go5.setText("ยืนยัน");
+        go5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -746,6 +800,8 @@ public class moneyex extends javax.swing.JFrame {
          if (input_thb_usd_data <= THB_have_data){
                           How_muct1 = input_thb_usd_data*RATE_THB_USD ;
                           Q1.setText("คุณจะได้รับ  "+How_muct1+ " USD");
+                          money_life_temp1 = THB_have_data-input_thb_usd_data;
+                          oprn1 = 1;
          }else{
              System.out.print("U don't have enove money!");
                      JOptionPane.showMessageDialog(null, 
@@ -926,6 +982,8 @@ public class moneyex extends javax.swing.JFrame {
          if (input_thb_yen_data <= THB_have_data){
                           How_muct2 = input_thb_yen_data*RATE_THB_YEN ;
                           Q2.setText("คุณจะได้รับ  "+How_muct2+ " YEN");
+                          money_life_temp2 = THB_have_data-input_thb_yen_data;
+                          oprn2 = 1;
          }else{
              System.out.print("U don't have enove money!");
                      JOptionPane.showMessageDialog(null, 
@@ -941,6 +999,9 @@ public class moneyex extends javax.swing.JFrame {
          if (input_yen_thb_data <= YEN_have_data){
                           How_muct3 = input_yen_thb_data*RATE_YEN_THB ;
                           Q3.setText("คุณจะได้รับ  "+How_muct3+ " บาท");
+                        money_life_temp3 = YEN_have_data-input_yen_thb_data;
+
+                          oprn3 = 1;
          }else{
              System.out.print("U don't have enove money!");
                      JOptionPane.showMessageDialog(null, 
@@ -952,10 +1013,13 @@ public class moneyex extends javax.swing.JFrame {
 
     private void go_yen_usdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go_yen_usdActionPerformed
         // TODO add your handling code here:
-                          input_yen_usd_data = Integer.valueOf(input_yen_usd.getText()); 
+          input_yen_usd_data = Integer.valueOf(input_yen_usd.getText()); 
          if (input_yen_usd_data <= YEN_have_data){
                           How_muct4 = input_yen_usd_data*RATE_YEN_USD ;
                           Q4.setText("คุณจะได้รับ  "+How_muct4+ " USD");
+                         money_life_temp4 = YEN_have_data-input_yen_usd_data;
+
+                          oprn4 = 1;
          }else{
              System.out.print("U don't have enove money!");
                      JOptionPane.showMessageDialog(null, 
@@ -971,6 +1035,9 @@ public class moneyex extends javax.swing.JFrame {
          if (input_usd_thb_data <= USD_have_data){
                   How_muct5 = input_usd_thb_data*RATE_USD_THB ;
                   Q5.setText("คุณจะได้รับ  "+How_muct5+ " บาท");
+              money_life_temp5 = USD_have_data-input_usd_thb_data;
+
+                  oprn5 = 1;
          }else{
              System.out.print("U don't have enove money!");
                      JOptionPane.showMessageDialog(null, 
@@ -986,6 +1053,8 @@ public class moneyex extends javax.swing.JFrame {
          if (input_usd_yen_data <= USD_have_data){
                   How_muct6 = input_usd_yen_data*RATE_USD_YEN ;
                   Q6.setText("คุณจะได้รับ  "+How_muct6+ " YEN");
+                  money_life_temp6 = USD_have_data-input_usd_yen_data;
+                  oprn6 = 1;
          }else{
              System.out.print("U don't have enove money!");
                      JOptionPane.showMessageDialog(null, 
@@ -994,6 +1063,361 @@ public class moneyex extends javax.swing.JFrame {
                               JOptionPane.WARNING_MESSAGE);
          }
     }//GEN-LAST:event_go_usd_yenActionPerformed
+
+    private void go1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go1ActionPerformed
+        // TODO add your handling code here:
+     if(oprn1 == 1){
+         //เขียนยอดเงินที่จ่ายไปลงไฟล์
+         System.out.print("THB เหลือ "+money_life_temp1);
+                  try{    
+           FileWriter fw1=new FileWriter(setting.path_have_THB);    
+           fw1.write(Double.toString(money_life_temp1));    
+           fw1.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }    
+          System.out.println("Success...");    
+         
+         //คํานวนเพิ่มยอดให้อีกสกุล
+         double reay_to_wire1 = How_muct1+USD_have_data;
+                           try{    
+           FileWriter fw12=new FileWriter(setting.path_have_USD);    
+           fw12.write(Double.toString(reay_to_wire1));    
+           fw12.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }
+                 String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        
+           String filePath = setting.path_Log;
+           String msg1 = "@ "+timeStamp+" / User: "+setting.user_login+" / "+input_thb_usd_data+" BATH "+"TO "+How_muct1+" USD";
+
+           try{
+                    	   List<String> log_old1 = Files.readAllLines(new File(filePath).toPath(), Charset.defaultCharset());
+                        //System.out.print(result);
+                  BufferedWriter writer1 = new BufferedWriter(new FileWriter(filePath));
+                  for(int i=0;i<log_old1.size();i++){
+                        System.out.println(log_old1.get(i));
+                        writer1.write(log_old1.get(i));
+                        writer1.newLine();
+}
+                    writer1.write(msg1);
+                
+                    writer1.newLine();
+                    writer1.flush();
+                    writer1.close();
+                }catch (IOException ex){
+                    System.out.println("File not found! pls check path setting.java");
+                }
+                                       JOptionPane.showMessageDialog(null, 
+                              "แลกเปลี่ยนเงินเรียบร้อย!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+          logtran golog = new logtran();
+        golog.setVisible(true);
+                              
+     }else{
+                              JOptionPane.showMessageDialog(null, 
+                              "กรุณากดปุ่มคํานวนยอดที่ได้รับก่อนจะยืนยัน!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+     }
+    }//GEN-LAST:event_go1ActionPerformed
+
+    private void go2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go2ActionPerformed
+        // TODO add your handling code here:
+      if(oprn2 == 1){
+        //เขียนยอดเงินที่จ่ายไปลงไฟล์
+         System.out.print("THB เหลือ "+money_life_temp2);
+                  try{    
+           FileWriter fw2=new FileWriter(setting.path_have_THB);    
+           fw2.write(Double.toString(money_life_temp2));    
+           fw2.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }    
+          System.out.println("Success...");    
+         
+         //คํานวนเพิ่มยอดให้อีกสกุล
+         double reay_to_wire2 = How_muct2+YEN_have_data;
+                           try{    
+           FileWriter fw22=new FileWriter(setting.path_have_YEN);    
+           fw22.write(Double.toString(reay_to_wire2));    
+           fw22.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }
+                 String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        
+           String filePath = setting.path_Log;
+           String msg2 = "@ "+timeStamp+" / User: "+setting.user_login+" / "+input_thb_yen_data+" BATH "+"TO "+How_muct2+" YEN";
+
+           try{
+                    	   List<String> log_old2 = Files.readAllLines(new File(filePath).toPath(), Charset.defaultCharset());
+                        //System.out.print(result);
+                  BufferedWriter writer2 = new BufferedWriter(new FileWriter(filePath));
+                  for(int i=0;i<log_old2.size();i++){
+                        System.out.println(log_old2.get(i));
+                        writer2.write(log_old2.get(i));
+                        writer2.newLine();
+}
+                    writer2.write(msg2);
+                
+                    writer2.newLine();
+                    writer2.flush();
+                    writer2.close();
+                }catch (IOException ex){
+                    System.out.println("File not found! pls check path setting.java");
+                }
+                                       JOptionPane.showMessageDialog(null, 
+                              "แลกเปลี่ยนเงินเรียบร้อย!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+          logtran golog = new logtran();
+        golog.setVisible(true);
+     }else{
+                              JOptionPane.showMessageDialog(null, 
+                              "กรุณากดปุ่มคํานวนยอดที่ได้รับก่อนจะยืนยัน!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+     }
+    }//GEN-LAST:event_go2ActionPerformed
+
+    private void go3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go3ActionPerformed
+        // TODO add your handling code here:
+             if(oprn3 == 1){
+                 //เขียนยอดเงินที่จ่ายไปลงไฟล์
+         System.out.print("YEN เหลือ "+money_life_temp3);
+                  try{    
+           FileWriter fw3=new FileWriter(setting.path_have_YEN);    
+           fw3.write(Double.toString(money_life_temp3));    
+           fw3.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }    
+          System.out.println("Success...");    
+         
+         //คํานวนเพิ่มยอดให้อีกสกุล
+         double reay_to_wire3 = How_muct3+THB_have_data;
+                           try{    
+           FileWriter fw32=new FileWriter(setting.path_have_THB);    
+           fw32.write(Double.toString(reay_to_wire3));    
+           fw32.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }
+                 String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        
+           String filePath = setting.path_Log;
+           String msg3 = "@ "+timeStamp+" / User: "+setting.user_login+" / "+input_yen_thb_data+" YEN "+"TO "+How_muct3+" THB";
+
+           try{
+                    	   List<String> log_old3 = Files.readAllLines(new File(filePath).toPath(), Charset.defaultCharset());
+                        //System.out.print(result);
+                  BufferedWriter writer3 = new BufferedWriter(new FileWriter(filePath));
+                  for(int i=0;i<log_old3.size();i++){
+                        System.out.println(log_old3.get(i));
+                        writer3.write(log_old3.get(i));
+                        writer3.newLine();
+}
+                    writer3.write(msg3);
+                
+                    writer3.newLine();
+                    writer3.flush();
+                    writer3.close();
+                }catch (IOException ex){
+                    System.out.println("File not found! pls check path setting.java");
+                }
+                                       JOptionPane.showMessageDialog(null, 
+                              "แลกเปลี่ยนเงินเรียบร้อย!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+          logtran golog = new logtran();
+        golog.setVisible(true);
+     }else{
+                              JOptionPane.showMessageDialog(null, 
+                              "กรุณากดปุ่มคํานวนยอดที่ได้รับก่อนจะยืนยัน!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+     }
+    }//GEN-LAST:event_go3ActionPerformed
+
+    private void go4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go4ActionPerformed
+        // TODO add your handling code here:
+             if(oprn4 == 1){
+         //เขียนยอดเงินที่จ่ายไปลงไฟล์
+         System.out.print("YEN เหลือ "+money_life_temp4);
+                  try{    
+           FileWriter fw4=new FileWriter(setting.path_have_YEN);    
+           fw4.write(Double.toString(money_life_temp4));    
+           fw4.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }    
+          System.out.println("Success...");    
+         
+         //คํานวนเพิ่มยอดให้อีกสกุล
+         double reay_to_wire4 = How_muct4+USD_have_data;
+                           try{    
+           FileWriter fw42=new FileWriter(setting.path_have_USD);    
+           fw42.write(Double.toString(reay_to_wire4));    
+           fw42.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }
+                 String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        
+           String filePath = setting.path_Log;
+           String msg4 = "@ "+timeStamp+" / User: "+setting.user_login+" / "+input_yen_usd_data+" YEN "+"TO "+How_muct4+" USD";
+
+           try{
+                    	   List<String> log_old4 = Files.readAllLines(new File(filePath).toPath(), Charset.defaultCharset());
+                        //System.out.print(result);
+                  BufferedWriter writer4 = new BufferedWriter(new FileWriter(filePath));
+                  for(int i=0;i<log_old4.size();i++){
+                        System.out.println(log_old4.get(i));
+                        writer4.write(log_old4.get(i));
+                        writer4.newLine();
+}
+                    writer4.write(msg4);
+                
+                    writer4.newLine();
+                    writer4.flush();
+                    writer4.close();
+                }catch (IOException ex){
+                    System.out.println("File not found! pls check path setting.java");
+                }
+                                       JOptionPane.showMessageDialog(null, 
+                              "แลกเปลี่ยนเงินเรียบร้อย!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+          logtran golog = new logtran();
+        golog.setVisible(true);
+     }else{
+                              JOptionPane.showMessageDialog(null, 
+                              "กรุณากดปุ่มคํานวนยอดที่ได้รับก่อนจะยืนยัน!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+     }
+    }//GEN-LAST:event_go4ActionPerformed
+
+    private void go5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go5ActionPerformed
+        // TODO add your handling code here:
+             if(oprn5 == 1){
+         //เขียนยอดเงินที่จ่ายไปลงไฟล์
+         System.out.print("USD เหลือ "+money_life_temp5);
+                  try{    
+           FileWriter fw5=new FileWriter(setting.path_have_USD);    
+           fw5.write(Double.toString(money_life_temp5));    
+           fw5.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }    
+          System.out.println("Success...");    
+         
+         //คํานวนเพิ่มยอดให้อีกสกุล
+         double reay_to_wire5 = How_muct5+THB_have_data;
+                           try{    
+           FileWriter fw52=new FileWriter(setting.path_have_THB);    
+           fw52.write(Double.toString(reay_to_wire5));    
+           fw52.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }
+                 String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        
+           String filePath = setting.path_Log;
+           String msg5 = "@ "+timeStamp+" / User: "+setting.user_login+" / "+input_usd_thb_data+" USD "+"TO "+How_muct5+" THB";
+
+           try{
+                    	   List<String> log_old5 = Files.readAllLines(new File(filePath).toPath(), Charset.defaultCharset());
+                        //System.out.print(result);
+                  BufferedWriter writer5 = new BufferedWriter(new FileWriter(filePath));
+                  for(int i=0;i<log_old5.size();i++){
+                        System.out.println(log_old5.get(i));
+                        writer5.write(log_old5.get(i));
+                        writer5.newLine();
+}
+                    writer5.write(msg5);
+                
+                    writer5.newLine();
+                    writer5.flush();
+                    writer5.close();
+                }catch (IOException ex){
+                    System.out.println("File not found! pls check path setting.java");
+                }
+                                       JOptionPane.showMessageDialog(null, 
+                              "แลกเปลี่ยนเงินเรียบร้อย!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+          logtran golog = new logtran();
+        golog.setVisible(true);
+     }else{
+                              JOptionPane.showMessageDialog(null, 
+                              "กรุณากดปุ่มคํานวนยอดที่ได้รับก่อนจะยืนยัน!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+     }
+    }//GEN-LAST:event_go5ActionPerformed
+
+    private void go6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go6ActionPerformed
+        // TODO add your handling code here:
+     if(oprn6 == 1){
+                  //เขียนยอดเงินที่จ่ายไปลงไฟล์
+         System.out.print("USD เหลือ "+money_life_temp6);
+                  try{    
+           FileWriter fw6=new FileWriter(setting.path_have_USD);    
+           fw6.write(Double.toString(money_life_temp6));    
+           fw6.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }    
+          System.out.println("Success...");    
+         
+         //คํานวนเพิ่มยอดให้อีกสกุล
+         double reay_to_wire6 = How_muct6+YEN_have_data;
+                           try{    
+           FileWriter fw62=new FileWriter(setting.path_have_YEN);    
+           fw62.write(Double.toString(reay_to_wire6));    
+           fw62.close();    
+          }catch(Exception e){
+              System.out.println(e);
+          }
+                 String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        
+           String filePath = setting.path_Log;
+           String msg6 = "@ "+timeStamp+" / User: "+setting.user_login+" / "+input_usd_yen_data+" USD "+"TO "+How_muct6+" YEN";
+
+           try{
+                    	   List<String> log_old6 = Files.readAllLines(new File(filePath).toPath(), Charset.defaultCharset());
+                        //System.out.print(result);
+                  BufferedWriter writer6 = new BufferedWriter(new FileWriter(filePath));
+                  for(int i=0;i<log_old6.size();i++){
+                        System.out.println(log_old6.get(i));
+                        writer6.write(log_old6.get(i));
+                        writer6.newLine();
+}
+                    writer6.write(msg6);
+                
+                    writer6.newLine();
+                    writer6.flush();
+                    writer6.close();
+                }catch (IOException ex){
+                    System.out.println("File not found! pls check path setting.java");
+                }
+                                       JOptionPane.showMessageDialog(null, 
+                              "แลกเปลี่ยนเงินเรียบร้อย!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+          logtran golog = new logtran();
+        golog.setVisible(true);
+     }else{
+                              JOptionPane.showMessageDialog(null, 
+                              "กรุณากดปุ่มคํานวนยอดที่ได้รับก่อนจะยืนยัน!", 
+                              "TITLE", 
+                              JOptionPane.WARNING_MESSAGE);
+     }
+    }//GEN-LAST:event_go6ActionPerformed
 
     /**
      * @param args the command line arguments

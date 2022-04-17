@@ -406,7 +406,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Q1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx USD"/>
+        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe14;&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;&#xe01;&#xe48;&#xe2d;&#xe19;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="show_rate_bath_usd">
@@ -437,7 +437,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Q2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx YEN"/>
+        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe14;&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;&#xe01;&#xe48;&#xe2d;&#xe19;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
@@ -471,7 +471,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Q3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx &#xe1a;&#xe32;&#xe17;"/>
+        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe14;&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;&#xe01;&#xe48;&#xe2d;&#xe19;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
@@ -505,7 +505,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Q4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx USD"/>
+        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe14;&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;&#xe01;&#xe48;&#xe2d;&#xe19;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel17">
@@ -547,7 +547,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Q5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx THB"/>
+        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe14;&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;&#xe01;&#xe48;&#xe2d;&#xe19;"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel21">
@@ -581,7 +582,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Q6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx YEN"/>
+        <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe14;&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;&#xe01;&#xe48;&#xe2d;&#xe19;"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -700,31 +701,49 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="go2">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="go3">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="go4">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="go6">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go6ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="go5">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go5ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

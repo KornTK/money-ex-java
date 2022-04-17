@@ -1,34 +1,7 @@
-Hi1
-Hi2
-Hi1
-Hi2
-Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2
-Hi1
-Hi2
-Hi1
-Hi2
-Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2Hi1
-Hi2
+@ 2022.04.17.21.27.17 / User: korntk / 2.0 BATH TO 7.6 YEN
+@ 2022.04.17.21.32.08 / User: korntk / 33.0 BATH TO 0.99 USD
+@ 2022.04.17.21.36.05 / User: korntk / 1.0 BATH TO 3.8 YEN
+@ 2022.04.17.21.41.59 / User: korntk / 22.0 YEN TO 6.6 THB
+@ 2022.04.17.21.45.12 / User: korntk / 2.0 YEN TO 0.016 USD
+@ 2022.04.17.21.51.32 / User: korntk / 2.0 USD TO 66.0 THB
+@ 2022.04.17.21.54.25 / User: korntk / 1.0 USD TO 126.0 YEN
