@@ -162,6 +162,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="username">
       <Properties>
+        <Property name="text" type="java.lang.String" value="korntk"/>
         <Property name="toolTipText" type="java.lang.String" value="&#xe01;&#xe23;&#xe38;&#xe13;&#xe32;&#xe01;&#xe23;&#xe2d;&#xe01;&#xe0a;&#xe37;&#xe48;&#xe2d;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;"/>
       </Properties>
     </Component>
@@ -175,6 +176,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="password">
       <Properties>
+        <Property name="text" type="java.lang.String" value="korntk"/>
         <Property name="toolTipText" type="java.lang.String" value="&#xe01;&#xe23;&#xe38;&#xe13;&#xe32;&#xe01;&#xe23;&#xe2d;&#xe01;&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe1c;&#xe48;&#xe32;&#xe19;"/>
       </Properties>
     </Component>

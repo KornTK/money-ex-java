@@ -117,12 +117,12 @@
                                                           </Group>
                                                           <EmptySpace max="32767" attributes="0"/>
                                                           <Group type="103" groupAlignment="1" attributes="0">
-                                                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel23" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="Q5" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="Q4" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="Q6" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="Q3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="Q2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="Q1" alignment="1" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                           <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
                                                       </Group>
@@ -207,7 +207,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="input_thb_usd" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="go_thb_usd" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Q1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -217,7 +217,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              <Component id="Q2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -238,7 +238,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="go_yen_thb" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="input_yen_thb" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Q3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -248,7 +248,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Q4" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="input_yen_usd" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
@@ -269,7 +269,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="input_usd_thb" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="go_usd_thb" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Q5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -278,7 +278,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Q6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="go_usd_yen" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="input_usd_yen" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
@@ -404,7 +404,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go_thb_usdActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="Q1">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx USD"/>
       </Properties>
@@ -431,8 +431,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go_thb_yenActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="Q2">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx YEN"/>
       </Properties>
@@ -462,8 +465,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go_yen_thbActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="Q3">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx &#xe1a;&#xe32;&#xe17;"/>
       </Properties>
@@ -493,8 +499,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go_yen_usdActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="Q4">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx USD"/>
       </Properties>
@@ -532,8 +541,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go_usd_thbActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel20">
+    <Component class="javax.swing.JLabel" name="Q5">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx THB"/>
       </Properties>
@@ -563,8 +575,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe27;&#xe19;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="go_usd_yenActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel23">
+    <Component class="javax.swing.JLabel" name="Q6">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe38;&#xe13;&#xe08;&#xe30;&#xe44;&#xe14;&#xe49;&#xe23;&#xe31;&#xe1a;  xx YEN"/>
       </Properties>
@@ -650,12 +665,12 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="23" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jButton9" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton13" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton15" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton11" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="go1" min="-2" max="-2" attributes="0"/>
+                      <Component id="go3" min="-2" max="-2" attributes="0"/>
+                      <Component id="go4" min="-2" max="-2" attributes="0"/>
+                      <Component id="go5" min="-2" max="-2" attributes="0"/>
+                      <Component id="go6" min="-2" max="-2" attributes="0"/>
+                      <Component id="go2" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
@@ -664,49 +679,49 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Component id="jButton9" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
-                  <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="go1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="73" max="32767" attributes="0"/>
+                  <Component id="go2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                  <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                  <Component id="go3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                  <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                  <Component id="go4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                  <Component id="go5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                  <Component id="jButton15" min="-2" max="-2" attributes="0"/>
+                  <Component id="go6" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton9">
+        <Component class="javax.swing.JButton" name="go1">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton11">
+        <Component class="javax.swing.JButton" name="go2">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="go3">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton13">
+        <Component class="javax.swing.JButton" name="go4">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton15">
+        <Component class="javax.swing.JButton" name="go6">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="go5">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xe22;&#xe37;&#xe19;&#xe22;&#xe31;&#xe19;"/>
           </Properties>

@@ -69,11 +69,13 @@ public class login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("ชื่อผู้ใช้");
 
+        username.setText("korntk");
         username.setToolTipText("กรุณากรอกชื่อผู้ใช้");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("รหัสผ่าน");
 
+        password.setText("korntk");
         password.setToolTipText("กรุณากรอกรหัสผ่าน");
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
