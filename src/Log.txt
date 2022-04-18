@@ -5,3 +5,5 @@
 @ 2022.04.17.21.45.12 / User: korntk / 2.0 YEN TO 0.016 USD
 @ 2022.04.17.21.51.32 / User: korntk / 2.0 USD TO 66.0 THB
 @ 2022.04.17.21.54.25 / User: korntk / 1.0 USD TO 126.0 YEN
+@ 2022.04.17.21.58.09 / User: korntk2 / 3.0 BATH TO 11.399999999999999 YEN
+@ 2022.04.17.21.58.14 / User: korntk2 / 3.0 USD TO 99.0 THB
